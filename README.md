@@ -79,6 +79,9 @@ npm run build:client
 # Executar servidor web (com interface)
 npm start
 
+# Executar em desenvolvimento
+npm run start:dev
+
 # Executar exemplo CLI
 npm run dev
 
@@ -88,6 +91,23 @@ npm test
 # Executar testes com cobertura
 npm run test:coverage
 ```
+
+## 🚀 Deploy
+
+### Railway (Recomendado)
+
+Este projeto está pronto para deploy no Railway! Veja o guia completo em [RAILWAY_DEPLOY.md](./RAILWAY_DEPLOY.md)
+
+**Deploy rápido:**
+1. Acesse [railway.app](https://railway.app)
+2. Conecte seu repositório GitHub
+3. Selecione `ronaldoarch/Task-Processor-API`
+4. Deploy automático! 🎉
+
+O Railway detectará automaticamente:
+- ✅ Build command: `npm run build`
+- ✅ Start command: `npm start`
+- ✅ Port: Configurado automaticamente
 
 ## 🌐 Interface Web
 
