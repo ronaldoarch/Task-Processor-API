@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Advanced Todo System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Sistema Avançado de Tarefas</h1>
+            <p class="subtitle">Demonstração de TypeScript Avançado</p>
+        </header>
+
+        <div class="stats-bar" id="statsBar">
+            <div class="stat">
+                <span class="stat-label">Total:</span>
+                <span class="stat-value" id="statTotal">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Pendentes:</span>
+                <span class="stat-value" id="statPending">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Em Progresso:</span>
+                <span class="stat-value" id="statInProgress">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Concluídas:</span>
+                <span class="stat-value" id="statCompleted">0</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="card">
+                    <h2>➕ Nova Tarefa</h2>
+                    <form id="taskForm">
+                        <input type="text" id="taskTitle" placeholder="Título da tarefa" required>
+                        <textarea id="taskDescription" placeholder="Descrição (opcional)" rows="3"></textarea>
+                        
+                        <label for="taskPriority">Prioridade:</label>
+                        <select id="taskPriority">
+                            <option value="low">Baixa</option>
+                            <option value="medium" selected>Média</option>
+                            <option value="high">Alta</option>
+                            <option value="urgent">Urgente</option>
+                        </select>
+
+                        <label for="taskType">Tipo:</label>
+                        <select id="taskType">
+                            <option value="standard" selected>Padrão</option>
+                            <option value="recurring">Recorrente</option>
+                        </select>
+
+                        <button type="submit" class="btn btn-primary">Criar Tarefa</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2>🔍 Filtros</h2>
+                    <div class="filters">
+                        <label for="filterStatus">Status:</label>
+                        <select id="filterStatus">
+                            <option value="">Todos</option>
+                            <option value="pending">Pendente</option>
+                            <option value="in-progress">Em Progresso</option>
+                            <option value="completed">Concluída</option>
+                            <option value="cancelled">Cancelada</option>
+                        </select>
+
+                        <label for="filterPriority">Prioridade:</label>
+                        <select id="filterPriority">
+                            <option value="">Todas</option>
+                            <option value="low">Baixa</option>
+                            <option value="medium">Média</option>
+                            <option value="high">Alta</option>
+                            <option value="urgent">Urgente</option>
+                        </select>
+
+                        <label for="filterSearch">Buscar:</label>
+                        <input type="text" id="filterSearch" placeholder="Buscar tarefas...">
+                    </div>
+                </div>
+            </aside>
+
+            <main class="tasks-section">
+                <div class="tasks-header">
+                    <h2>📋 Tarefas</h2>
+                    <div class="sort-controls">
+                        <label for="sortField">Ordenar por:</label>
+                        <select id="sortField">
+                            <option value="createdAt">Data de Criação</option>
+                            <option value="priority">Prioridade</option>
+                            <option value="title">Título</option>
+                        </select>
+                        <select id="sortOrder">
+                            <option value="desc">Descendente</option>
+                            <option value="asc">Ascendente</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="tasksList" class="tasks-list">
+                    <div class="loading">Carregando tarefas...</div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
